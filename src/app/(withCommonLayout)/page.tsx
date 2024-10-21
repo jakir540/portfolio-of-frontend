@@ -1,10 +1,10 @@
-import Landing from "@/src/components/modules/home/Landing";
 import RecentPost from "@/src/components/modules/home/RecentPost";
+import TimeLine from "@/src/components/modules/home/Timeline";
 
 export default function Home() {
   return (
     <>
-      <Landing />
+      <TimeLine />
       <RecentPost />
     </>
   );

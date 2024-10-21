@@ -1,10 +1,12 @@
+import Footer from "@/src/components/UI/Footer";
 import { Navbar } from "@/src/components/UI/navbar";
 
 const CommonLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="relative flex flex-col h-screen">
+    <div className="flex flex-col">
       <Navbar />
-      <main>{children}</main>
+      <main className="h-screen">{children}</main>
+      <Footer />
     </div>
   );
 };
