@@ -1,11 +1,18 @@
-import RecentPost from "@/src/components/modules/home/RecentPost";
-import TimeLine from "@/src/components/modules/home/Timeline";
+/* eslint-disable import/order */
+
+// import TimeLine from "@/src/components/modules/home/Timeline";
+import Education from "@/src/components/modules/home/Education";
+import Banner from "./Banner";
+import AboutMe from "@/src/components/modules/home/AboutMe";
 
 export default function Home() {
   return (
     <>
-      <TimeLine />
-      <RecentPost />
+      <Banner />
+
+      {/* <TimeLine /> */}
+      <AboutMe />
+      <Education />
     </>
   );
 }

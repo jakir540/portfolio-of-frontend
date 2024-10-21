@@ -1,3 +1,4 @@
+/* eslint-disable react/self-closing-comp */
 const timelines = [
   {
     title: "Frontend Developer",
