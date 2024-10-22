@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable import/order */
+/* eslint-disable react/jsx-sort-props */
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -12,15 +15,26 @@ import NextLink from "next/link";
 import clsx from "clsx";
 import Link from "next/link";
 import { ThemeSwitch } from "@/src/components/UI/theme-switch";
+import Image from "next/image";
 
 export const Navbar = () => {
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <NextUINavbar
+      className="bg-[#0d1224]  text-white"
+      maxWidth="xl"
+      position="sticky"
+    >
       {/* Left: Logo and Brand */}
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            image
+            <Image
+              src="/assets/MyLogo.jpg"
+              alt="this log image"
+              width={50}
+              height={50}
+              className="rounded-full"
+            />
           </NextLink>
         </NavbarBrand>
 
@@ -84,7 +98,6 @@ export const Navbar = () => {
                       : "foreground"
                 }
                 href={item.href}
-                size="lg"
               >
                 {item.label}
               </Link>

@@ -13,10 +13,10 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const Banner = () => {
   return (
-    <div className="min-h-screen py-10 bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white flex justify-center items-center">
+    <div className="min-h-screen pb-5 bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] text-white flex justify-center items-center gap-3">
       <div className="text-center space-y-8">
         {/* Main Text */}
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+        <h1 className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight ">
           Hello, <br />
           I'm{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
@@ -72,8 +72,9 @@ const Banner = () => {
       </div>
 
       {/* Code Snippet Section */}
-      <div className="mt-5 w-full max-w-3xl bg-gray-900 p-6 rounded-lg shadow-lg relative">
+      <div className="mt-5 w-full max-w-2xl bg-gray-900 p-6 rounded-lg shadow-lg relative">
         {/* Header - Simulating a Code Editor Tab */}
+
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center space-x-2">
             <span className="h-3 w-3 bg-red-500 rounded-full"></span>
@@ -84,61 +85,61 @@ const Banner = () => {
         </div>
 
         {/* Code Block */}
-        <div className="mt-5 w-full max-w-3xl bg-gray-900 p-6 rounded-lg shadow-lg relative">
-          {/* Code Block */}
-          <pre className="text-left text-sm text-gray-100 font-mono overflow-x-auto leading-relaxed p-4 bg-gray-800 rounded-lg shadow-inner">
-            <code>
-              <span className="text-green-400">const</span> coder = {"{"}
-              <br />
-              &nbsp;&nbsp;<span className="text-yellow-300">name</span>:{" "}
-              <span className="text-red-400">'Abu Said'</span>,
-              <br />
-              &nbsp;&nbsp;<span className="text-yellow-300">skills</span>: [
-              <span className="text-green-400">'React'</span>,{" "}
-              <span className="text-green-400">'NextJS'</span>,{" "}
-              <span className="text-green-400">'Redux'</span>,{" "}
-              <span className="text-green-400">'Express'</span>,{" "}
-              <span className="text-green-400">'NestJS'</span>,{" "}
-              <span className="text-green-400">'MySql'</span>,{" "}
-              <span className="text-green-400">'MongoDB'</span>,{" "}
-              <span className="text-green-400">'Docker'</span>,{" "}
-              <span className="text-green-400">'AWS'</span>],
-              <br />
-              &nbsp;&nbsp;<span className="text-yellow-300">
-                hardWorker
-              </span>: <span className="text-blue-400">true</span>,
-              <br />
-              &nbsp;&nbsp;<span className="text-yellow-300">
-                quickLearner
-              </span>: <span className="text-blue-400">true</span>,
-              <br />
-              &nbsp;&nbsp;<span className="text-yellow-300">problemSolver</span>
-              : <span className="text-blue-400">true</span>,
-              <br />
-              &nbsp;&nbsp;<span className="text-yellow-300">
-                hireable
-              </span>: <span className="text-green-400">function</span>() {"{"}
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <span className="text-green-400">return</span>(
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.
-              <span className="text-yellow-300">hardWorker</span> &&
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.
-              <span className="text-yellow-300">problemSolver</span> &&
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.
-              <span className="text-yellow-300">skills</span>.length &gt;= 5
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;)
-              <br />
-              &nbsp;&nbsp;{"}"},
-              <br />
-              {"};"}
-            </code>
-          </pre>
-        </div>
+        <pre className="text-left text-sm text-gray-100 font-mono overflow-x-auto leading-relaxed p-6 bg-gray-800 rounded-lg shadow-inner">
+          <code className="p-5">
+            <span className="text-green-400">const</span> coder = {"{"}
+            <br />
+            &nbsp;&nbsp;<span className="text-yellow-300">name</span>:{" "}
+            <span className="text-red-400">'Md Jakir Hossain'</span>,
+            <br />
+            &nbsp;&nbsp;<span className="text-yellow-300">skills</span>: [
+            <span className="text-green-400">'React'</span>,{" "}
+            <span className="text-green-400">'NextJS'</span>,{" "}
+            <span className="text-green-400">'Redux'</span>,{" "}
+            <span className="text-green-400">'Express'</span>, <br />
+            <span className="text-green-400">'NestJS'</span>,{" "}
+            <span className="text-green-400">'MySql'</span>,{" "}
+            <span className="text-green-400">'MongoDB'</span>,{" "}
+            <span className="text-green-400">'Docker'</span>,{" "}
+            <span className="text-green-400">'AWS'</span>],
+            <br />
+            &nbsp;&nbsp;<span className="text-yellow-300">
+              hardWorker
+            </span>: <span className="text-blue-400">true</span>,
+            <br />
+            &nbsp;&nbsp;<span className="text-yellow-300">
+              quickLearner
+            </span>: <span className="text-blue-400">true</span>,
+            <br />
+            &nbsp;&nbsp;<span className="text-yellow-300">
+              problemSolver
+            </span>: <span className="text-blue-400">true</span>,
+            <br />
+            &nbsp;&nbsp;<span className="text-yellow-300">hireable</span>:{" "}
+            <span className="text-green-400">function</span>() {"{"}
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span className="text-green-400 ps-5">return</span>(
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span className="ps-8">this</span>.
+            <span className="text-yellow-300">hardWorker</span> &&
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span className="ps-8">this</span>.
+            <span className="text-yellow-300">problemSolver</span> &&
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span className="ps-8">this</span>.
+            <span className="text-yellow-300">skills</span>.length &gt;= 5
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;)
+            <br />
+            &nbsp;&nbsp;{"}"},
+            <br />
+            {"};"}
+          </code>
+        </pre>
       </div>
     </div>
   );

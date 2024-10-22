@@ -6,7 +6,7 @@ import educationAnimation from "../../../../public/assets/Animation - 1729532302
 
 const Education = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 items-center justify-between p-8 text-white shadow-md">
+    <div className="flex flex-col md:flex-row bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] items-center justify-between p-8 text-white shadow-md">
       <div className="w-full md:w-1/2 flex justify-center md:justify-start">
         <Lottie animationData={educationAnimation} loop={true} />
       </div>
