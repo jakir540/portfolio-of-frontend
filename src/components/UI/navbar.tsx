@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable import/order */
 /* eslint-disable react/jsx-sort-props */
+"use client";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -10,17 +11,23 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-// import { FaUserAlt } from "react-icons/fa";
 import NextLink from "next/link";
 import clsx from "clsx";
 import Link from "next/link";
 import { ThemeSwitch } from "@/src/components/UI/theme-switch";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export const Navbar = () => {
+  const { theme } = useTheme();
+  const isDarkMode = theme === "dark";
+
   return (
     <NextUINavbar
-      className="bg-[#0d1224]  text-white"
+      className={clsx(
+        "text-green-400 transition-colors duration-300",
+        isDarkMode ? "bg-[#0d1224]" : "bg-white text-black shadow-md"
+      )}
       maxWidth="xl"
       position="sticky"
     >
@@ -30,7 +37,7 @@ export const Navbar = () => {
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Image
               src="/assets/MyLogo.jpg"
-              alt="this log image"
+              alt="Logo"
               width={50}
               height={50}
               className="rounded-full"
@@ -49,8 +56,8 @@ export const Navbar = () => {
             <NavbarItem key={item.href}>
               <NextLink
                 className={clsx(
-                  "text-foreground",
-                  "data-[active=true]:text-primary data-[active=true]:font-medium"
+                  "hover:text-primary transition-colors duration-200",
+                  isDarkMode ? "text-white" : "text-black"
                 )}
                 href={item.href}
               >
@@ -66,10 +73,9 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="flex gap-2">
+        <NavbarItem className="flex gap-2 items-center">
           <ThemeSwitch />
-          {/* <FaUserAlt className="text-hsl(250,100%,75%) hover:text-white" size={24} /> */}
-          icons
+          {/* Additional icons or elements can be added here */}
         </NavbarItem>
       </NavbarContent>
 
@@ -80,7 +86,9 @@ export const Navbar = () => {
       </NavbarContent>
 
       {/* Mobile Menu */}
-      <NavbarMenu>
+      <NavbarMenu
+        className={isDarkMode ? "bg-[#0d1224]" : "bg-white text-black"}
+      >
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {[
             { label: "Home", href: "/" },
@@ -90,13 +98,10 @@ export const Navbar = () => {
           ].map((item, index) => (
             <NavbarMenuItem key={`${item.label}-${index}`}>
               <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === 3
-                      ? "danger"
-                      : "foreground"
-                }
+                className={clsx(
+                  "hover:text-primary transition-colors duration-200",
+                  isDarkMode ? "text-white" : "text-black"
+                )}
                 href={item.href}
               >
                 {item.label}
