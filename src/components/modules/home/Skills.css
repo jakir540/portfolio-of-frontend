@@ -1,10 +1,7 @@
 .homeSkills {
-  transform: translateY(-200px);
   background-color: hsl(219, 48%, 8%);
-  height: 1500px;
+  height: 800px;
   position: relative;
-  margin-bottom: -200px;
-  padding: 200px;
   box-sizing: border-box;
   perspective: 450px;
   display: flex;
@@ -72,26 +69,48 @@
     transform: scale(1.2) translate(-10px);
   }
 }
-
-.homeSKillsBox {
-  background-color: hsl(250, 100%, 75%);
-  padding: 0 2vmax;
-  position: absolute;
+/* Carousel Container */
+.homeSkillsBox {
   display: flex;
-  flex-direction: column;
-  right: -300px;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  flex-direction: row;
+  overflow: hidden;
+  width: 80%; /* Adjusted for better responsiveness */
+  max-width: 1000px; /* Limit the width for larger screens */
+  height: 80px;
+  background-color: hsl(219, 48%, 12%);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
-.homeSKillsBox > svg {
-  font-size: 5vmax;
-  color: white;
-  transition: all 0.5s;
-  margin: 10px;
+.icon-carousel {
+  display: flex;
+  flex-direction: row; /* Horizontal scrolling */
+  animation: horizontal-scroll 10s linear infinite;
 }
 
-.homeSKillsBox > svg:hover {
+@keyframes horizontal-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Moves left by the width of the icon list */
+  }
+}
+
+.homeSkillsBox:hover .icon-carousel {
+  animation-play-state: paused; /* Pause animation on hover */
+}
+
+.icon {
+  font-size: 50px;
+  color: hsl(250, 100%, 75%);
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.icon:hover {
   transform: scale(1.5);
 }
