@@ -20,7 +20,7 @@ export type Comment = {
 };
 
 export type BlogPost = {
-  id: string; // Unique identifier for the blog post
+  _id: string; // Unique identifier for the blog post
   title: string; // Title of the blog post
   slug: string; // URL-friendly version of the title
   excerpt: string; // Short summary or preview of the content
