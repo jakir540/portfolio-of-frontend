@@ -1,21 +1,12 @@
 "use client";
+import { TProject } from "@/src/types";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify"; // For toast notifications (on error)
 
 /* eslint-disable linebreak-style */
 
-type Project = {
-  _id: string;
-  title: string;
-  description: string;
-  technologies: string[];
-  liveLink: string;
-  repositoryLink: string;
-  image: string;
-};
-
 const AllProjects = () => {
-  const [projects, setProjects] = useState<Project[]>([]); // State for storing projects
+  const [projects, setProjects] = useState<TProject[]>([]); // State for storing projects
   const [loading, setLoading] = useState(true); // State for loading
   const [error, setError] = useState<string | null>(null); // Error state to handle any issues
 

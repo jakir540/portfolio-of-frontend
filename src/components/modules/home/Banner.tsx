@@ -152,3 +152,5 @@ const Banner = () => {
 };
 
 export default Banner;
+
+// text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-pink-500">

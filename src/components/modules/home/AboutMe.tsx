@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react/jsx-sort-props */
+/* AboutMe.js */
+
 import Image from "next/image";
+import styles from "./AboutMe.module.css"; // Assuming you placed the CSS in AboutMe.module.css
 
 const AboutMe = () => {
   return (
@@ -11,13 +13,16 @@ const AboutMe = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
         {/* Profile Image */}
         <div className="w-full md:w-1/3 flex justify-center md:justify-start">
-          <Image
-            src="/assets/jakirphoto.PNG"
-            alt="Profile"
-            width={300}
-            height={300}
-            className="rounded-full shadow-xl w-96 h-96 object-cover border-4 border-pink-500 transform hover:scale-105 transition-all duration-300"
-          />
+          <div className={styles.imageContainer}>
+            <div className={styles.spinBorder}></div>
+            <Image
+              src="/assets/jakirphoto.PNG"
+              alt="Profile"
+              width={300}
+              height={300}
+              className="rounded-full"
+            />
+          </div>
         </div>
 
         {/* About Me Content */}
