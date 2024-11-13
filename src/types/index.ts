@@ -47,3 +47,18 @@ export type BlogPost = {
     content: string | string[];
   }[];
 };
+
+export type TProject = {
+  _id: string;
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  liveLink: string;
+  repositoryLink: string;
+  image: string;
+  category: string;
+  status: string;
+  features: string[];
+  role: string;
+};
