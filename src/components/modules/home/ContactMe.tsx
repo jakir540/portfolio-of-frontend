@@ -34,7 +34,10 @@ const ContactMe = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] text-white py-20 px-4 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      className="bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] text-white py-20 px-4 sm:px-6 lg:px-8"
+    >
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
           Contact Me
@@ -96,7 +99,7 @@ const ContactMe = () => {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

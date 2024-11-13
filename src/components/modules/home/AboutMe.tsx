@@ -4,7 +4,10 @@ import Image from "next/image";
 
 const AboutMe = () => {
   return (
-    <div className="py-16 px-8 bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] text-white">
+    <section
+      id="about"
+      className="py-16 px-8 bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] text-white"
+    >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
         {/* Profile Image */}
         <div className="w-full md:w-1/3 flex justify-center md:justify-start">
@@ -42,7 +45,7 @@ const AboutMe = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

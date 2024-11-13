@@ -1,6 +1,5 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable padding-line-between-statements */
 /* eslint-disable import/order */
-/* eslint-disable react/jsx-sort-props */
 "use client";
 import {
   Navbar as NextUINavbar,
@@ -22,11 +21,21 @@ export const Navbar = () => {
   const { theme } = useTheme();
   const isDarkMode = theme === "dark";
 
+  const handleScrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <NextUINavbar
       className={clsx(
-        "text-green-400 transition-colors duration-300",
-        isDarkMode ? "bg-[#0d1224]" : "bg-white text-black shadow-md"
+        "text-green-400 transition-all duration-300",
+        isDarkMode ? "bg-[#0d1224]" : "bg-white text-black shadow-lg"
       )}
       maxWidth="xl"
       position="sticky"
@@ -40,29 +49,30 @@ export const Navbar = () => {
               alt="Logo"
               width={50}
               height={50}
-              className="rounded-full"
+              className="rounded-full transition-transform duration-300 hover:scale-110"
             />
           </NextLink>
         </NavbarBrand>
 
         {/* Navbar links for larger screens */}
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
+        <ul className="hidden lg:flex gap-8 justify-start ml-2">
           {[
-            { label: "Home", href: "/" },
-            { label: "About", href: "/about" },
-            { label: "Projects", href: "/projects" },
-            { label: "Contact", href: "/contact" },
+            { label: "Home", href: "#home" },
+            { label: "About", href: "#about" },
+            { label: "Projects", href: "#projects" },
+            { label: "Contact", href: "#contact" },
           ].map((item) => (
             <NavbarItem key={item.href}>
-              <NextLink
+              <button
+                onClick={() => handleScrollToSection(item.href.slice(1))}
                 className={clsx(
-                  "hover:text-primary transition-colors duration-200",
-                  isDarkMode ? "text-white" : "text-black"
+                  "text-lg font-medium transition-colors duration-200",
+                  isDarkMode ? "text-white" : "text-black",
+                  "hover:text-primary"
                 )}
-                href={item.href}
               >
                 {item.label}
-              </NextLink>
+              </button>
             </NavbarItem>
           ))}
         </ul>
@@ -91,21 +101,22 @@ export const Navbar = () => {
       >
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {[
-            { label: "Home", href: "/" },
-            { label: "About", href: "/about" },
-            { label: "Projects", href: "/projects" },
-            { label: "Contact", href: "/contact" },
+            { label: "Home", href: "#home" },
+            { label: "About", href: "#about" },
+            { label: "Projects", href: "#projects" },
+            { label: "Contact", href: "#contact" },
           ].map((item, index) => (
             <NavbarMenuItem key={`${item.label}-${index}`}>
-              <Link
+              <button
+                onClick={() => handleScrollToSection(item.href.slice(1))}
                 className={clsx(
-                  "hover:text-primary transition-colors duration-200",
-                  isDarkMode ? "text-white" : "text-black"
+                  "text-lg font-medium transition-colors duration-200",
+                  isDarkMode ? "text-white" : "text-black",
+                  "hover:text-primary"
                 )}
-                href={item.href}
               >
                 {item.label}
-              </Link>
+              </button>
             </NavbarMenuItem>
           ))}
         </div>

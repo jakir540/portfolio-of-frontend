@@ -65,9 +65,15 @@ const Banner = () => {
           <button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-purple-600 hover:to-pink-500 text-white py-3 px-6 rounded-full text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
             Contact Me
           </button>
-          <button className="border-2 border-pink-500 hover:border-purple-500 text-white py-3 px-6 rounded-full text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+          <a
+            // https://drive.google.com/file/d/1ympfhV178ItsN-udOHiQydYdmILLys4J/view?usp=sharing
+            href="https://drive.google.com/uc?export=download&id=1ympfhV178ItsN-udOHiQydYdmILLys4J"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-2 border-pink-500 hover:border-purple-500 text-white py-3 px-6 rounded-full text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out"
+          >
             Get Resume
-          </button>
+          </a>
         </div>
       </div>
 

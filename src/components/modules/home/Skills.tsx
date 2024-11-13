@@ -47,7 +47,7 @@ const Skills = () => {
         </div>
         <div className="homeCubeSkillFaces homeCubeSkillsFace3">
           <img
-            src="https://w7.pngwing.com/pngs/324/26/png-transparent-c-letter-alphabet-letter-c-angle-a-letter-case.png"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCK3B5SLHCrQa8K2WzmzBi0HEdBd5SfrWghw&s"
             alt="Face3"
           />
         </div>
@@ -74,3 +74,6 @@ const Skills = () => {
 };
 
 export default Skills;
+
+// https://ibb.co.com/CVJznW7
+// https://ibb.co.com/1XBh8W6
