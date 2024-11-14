@@ -9,13 +9,14 @@ import ContactUs from "@/src/components/modules/home/ContactMe";
 import Skills from "@/src/components/modules/home/Skills";
 import AllProjects from "@/src/components/modules/home/AllProjects";
 import Blogs from "@/src/components/modules/home/Blogs";
+import TimeLine from "@/src/components/modules/home/Timeline";
 
 export default function Home() {
   return (
     <>
       <Banner />
 
-      {/* <TimeLine /> */}
+      <TimeLine />
       <AboutMe />
       <Education />
       <Skills />
