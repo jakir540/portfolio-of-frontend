@@ -1,9 +1,9 @@
+/* eslint-disable import/order */
 "use client";
 import { TProject } from "@/src/types";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify"; // For toast notifications (on error)
-
-/* eslint-disable linebreak-style */
+import Link from "next/link"; // Import Link from Next.js
 
 const AllProjects = () => {
   const [projects, setProjects] = useState<TProject[]>([]); // State for storing projects
@@ -63,60 +63,61 @@ const AllProjects = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
         {projects.map((project) => (
-          <div
-            key={project._id}
-            className="bg-gray-900 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer"
-          >
-            {/* Project Title */}
-            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-4">
-              {project.title}
-            </h2>
+          <Link key={project._id} href={`/project/${project._id}`} passHref>
+            <div className="bg-gray-900 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer">
+              {/* Project Title */}
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-4">
+                {project.title}
+              </h2>
 
-            {/* Project Image */}
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-60 object-cover rounded-lg mb-6"
-            />
+              {/* Project Image */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-60 object-cover rounded-lg mb-6"
+              />
 
-            {/* Project Description */}
-            <p className="text-gray-400 mb-4 text-sm">{project.description}</p>
+              {/* Project Description */}
+              <p className="text-gray-400 mb-4 text-sm">
+                {project.description}
+              </p>
 
-            {/* Technologies */}
-            <div className="mb-4">
-              <strong className="text-gray-300">Technologies:</strong>
-              <div className="flex flex-wrap space-x-2">
-                {project.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="bg-teal-500 text-white px-2 py-1 rounded-md text-xs"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              {/* Technologies */}
+              <div className="mb-4">
+                <strong className="text-gray-300">Technologies:</strong>
+                <div className="flex flex-wrap space-x-2">
+                  {project.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="bg-teal-500 text-white px-2 py-1 rounded-md text-xs"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Project Links */}
+              <div className="mt-6 flex space-x-4 justify-center">
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 transition duration-300"
+                >
+                  Live Project
+                </a>
+                <a
+                  href={project.repositoryLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-800 text-teal-400 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-300"
+                >
+                  Repository
+                </a>
               </div>
             </div>
-
-            {/* Project Links */}
-            <div className="mt-6 flex space-x-4 justify-center">
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 transition duration-300"
-              >
-                Live Project
-              </a>
-              <a
-                href={project.repositoryLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 text-teal-400 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-300"
-              >
-                Repository
-              </a>
-            </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
@@ -124,8 +125,3 @@ const AllProjects = () => {
 };
 
 export default AllProjects;
-
-// https://i.ibb.co.com/wYcQ9n1/ass4.jpg
-// https://i.ibb.co.com/whscxJ8/ass5.jpg
-// https://i.ibb.co.com/Zzhv9P1/asstoy.jpg
-// https://i.ibb.co.com/PtcBxVT/kriya.jpg
