@@ -15,10 +15,9 @@ export default function Home() {
   return (
     <>
       <Banner />
-
-      <TimeLine />
       <AboutMe />
       <Education />
+      <TimeLine />
       <Skills />
       <AllProjects />
       <Blogs />

@@ -11,7 +11,9 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/blog/AllBlog");
+        const res = await fetch(
+          "https://portfolio-of-backend.vercel.app/api/blog/AllBlog"
+        );
         if (!res.ok) throw new Error("Failed to fetch blogs");
         const { data } = await res.json();
         setBlogs(data); // Update blogs state with fetched data

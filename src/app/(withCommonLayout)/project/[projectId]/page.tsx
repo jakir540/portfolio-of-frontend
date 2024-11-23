@@ -15,7 +15,7 @@ const ProjectDetails = ({ params }: { params: { projectId: string } }) => {
     const fetchProjectDetails = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/project/${projectId}`
+          `https://portfolio-of-backend.vercel.app/api/project/${projectId}`
         );
         if (!res.ok) throw new Error("Failed to fetch project details");
         const { data } = await res.json();

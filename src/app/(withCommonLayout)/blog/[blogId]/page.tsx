@@ -12,7 +12,9 @@ const BlogDetails = ({ params }: { params: { blogId: string } }) => {
   useEffect(() => {
     const fetchBlogDetails = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/blog/${blogId}`);
+        const res = await fetch(
+          `https://portfolio-of-backend.vercel.app/api/blog/${blogId}`
+        );
         if (!res.ok) throw new Error("Failed to fetch blog details");
         const { data } = await res.json();
         setBlog(data); // Set the blog data

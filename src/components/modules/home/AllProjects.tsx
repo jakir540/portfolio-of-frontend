@@ -14,7 +14,9 @@ const AllProjects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/project/allProject");
+        const res = await fetch(
+          "https://portfolio-of-backend.vercel.app/api/project/allProject"
+        );
         if (!res.ok) throw new Error("Failed to fetch projects");
         const { data } = await res.json();
         setProjects(data); // Update projects state with fetched data

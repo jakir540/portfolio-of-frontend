@@ -104,6 +104,9 @@ export const Navbar = () => {
             { label: "Home", href: "#home" },
             { label: "About", href: "#about" },
             { label: "Projects", href: "#projects" },
+            { label: "Login", href: "#login" },
+            { label: "SignUp", href: "#signUp" },
+            { label: "Projects", href: "#projects" },
             { label: "Contact", href: "#contact" },
           ].map((item, index) => (
             <NavbarMenuItem key={`${item.label}-${index}`}>
