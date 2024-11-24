@@ -34,12 +34,14 @@ const AboutMe = () => {
             a passionate Web Developer with experience in building modern,
             responsive websites and applications. I have a deep understanding of
             web technologies like
+            <span className="text-pink-400"> Typescript</span>,{" "}
             <span className="text-pink-400"> React</span>,{" "}
+            <span className="text-pink-400"> Redux</span>,{" "}
             <span className="text-pink-400">Next.js</span>, and
-            <span className="text-pink-400"> Tailwind CSS</span>. I love turning
-            complex problems into simple, beautiful, and intuitive solutions. My
-            goal is to always build products that provide pixel-perfect,
-            performant experiences.
+            <span className="text-pink-400"> Nodejs, Mongoose</span>. I love
+            turning complex problems into simple, beautiful, and intuitive
+            solutions. My goal is to always build products that provide
+            pixel-perfect, performant experiences.
           </p>
 
           <p className="mt-4 text-gray-300 leading-relaxed">

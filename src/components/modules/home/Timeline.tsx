@@ -9,20 +9,20 @@ const milestones = [
       "Started with the basics of web development, including HTML, CSS, and JavaScript. Built simple websites and explored responsive design.",
   },
   {
-    title: "Completed Web Development Bootcamp",
-    source: "Online Bootcamp",
-    startDate: "2022-07-01",
-    endDate: "2022-12-31",
+    title: "Completed Web Development",
+    source: "Programming Hero",
+    startDate: "2023-01-01",
+    endDate: "2023-06-31",
     description:
       "Participated in an intensive online bootcamp where I learned front-end and back-end development, including React, Node.js, and Express.",
   },
   {
-    title: "Built Personal Portfolio Website",
-    source: "Personal Project",
-    startDate: "2023-01-01",
-    endDate: "2023-03-31",
+    title: "Next Level Web Development",
+    source: "Programming Hero",
+    startDate: "2024-04-01",
+    endDate: "2024-10-31",
     description:
-      "Designed and developed my personal portfolio website using React and Tailwind CSS, showcasing my skills and projects.",
+      "Dive in the Next Level web development, including Tyscript, Redux, and Mongoose.Built advance level websites and explored modern design.",
   },
   {
     title: "Contributed to Open-Source Projects",
