@@ -61,6 +61,7 @@ export const Navbar = () => {
             { label: "About", href: "#about" },
             { label: "Projects", href: "#projects" },
             { label: "Contact", href: "#contact" },
+            { label: "Blog", href: "#Blog" },
           ].map((item) => (
             <NavbarItem key={item.href}>
               <button
@@ -108,6 +109,7 @@ export const Navbar = () => {
             { label: "SignUp", href: "#signUp" },
             { label: "Projects", href: "#projects" },
             { label: "Contact", href: "#contact" },
+            { label: "Blog", href: "#Blog" },
           ].map((item, index) => (
             <NavbarMenuItem key={`${item.label}-${index}`}>
               <button
