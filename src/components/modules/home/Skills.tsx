@@ -1,14 +1,17 @@
 /* eslint-disable react/self-closing-comp */
 import {
   SiChai,
-  SiReact,
+  SiCss3,
+  SiExpress,
+  SiHtml5,
   SiJavascript,
   SiMongodb,
   SiNodedotjs,
-  SiExpress,
-  SiCss3,
-  SiHtml5,
+  SiReact,
   SiThreedotjs,
+  SiTypescript,
+  SiRedux,
+  SiNextdotjs,
 } from "react-icons/si";
 import "./Skills.css";
 
@@ -17,7 +20,7 @@ const Skills = () => {
     <div className="homeSkills relative">
       <h3 className="text-4xl font-bold mt-[-50px]">Skills</h3>
       {/* Right-Side Carousel */}
-      <div className="homeSkillsBox  h-16 w-full overflow-hidden rounded-lg bg-gray-900 p-2 shadow-lg mt-[-120px] mb-5 ">
+      <div className="homeSkillsBox h-16 w-full overflow-hidden rounded-lg bg-gray-900 p-2 shadow-lg mt-[-120px] mb-5">
         <div className="icon-carousel flex items-center space-x-4">
           <SiChai className="icon text-white text-4xl" />
           <SiCss3 className="icon text-white text-4xl" />
@@ -28,6 +31,11 @@ const Skills = () => {
           <SiNodedotjs className="icon text-white text-4xl" />
           <SiReact className="icon text-white text-4xl" />
           <SiThreedotjs className="icon text-white text-4xl" />
+          <SiTypescript className="icon text-white text-4xl" />{" "}
+          {/* Added TypeScript */}
+          <SiRedux className="icon text-white text-4xl" /> {/* Added Redux */}
+          <SiNextdotjs className="icon text-white text-4xl" />{" "}
+          {/* Added Next.js */}
         </div>
       </div>
 

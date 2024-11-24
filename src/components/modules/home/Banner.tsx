@@ -1,7 +1,8 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-sort-props */
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -12,6 +13,36 @@ import {
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const Banner = () => {
+  const skillsArray = [
+    "React",
+    "NextJS",
+    "Redux",
+    "Express",
+    "NestJS",
+    "MySql",
+    "MongoDB",
+    "Docker",
+    "AWS",
+  ];
+
+  const [displayedSkills, setDisplayedSkills] = useState<string[]>([]);
+
+  useEffect(() => {
+    let skillIndex = 0;
+    const intervalId = setInterval(() => {
+      setDisplayedSkills((prevSkills) => [
+        ...prevSkills,
+        skillsArray[skillIndex],
+      ]);
+      skillIndex += 1;
+      if (skillIndex >= skillsArray.length) {
+        clearInterval(intervalId); // Stop once all skills are displayed
+      }
+    }, 500); // Adjust the typing speed here (500ms between each skill)
+
+    return () => clearInterval(intervalId); // Cleanup the interval on unmount
+  }, []);
+
   return (
     <div className="min-h-screen pb-5 bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] text-white flex justify-center items-center gap-3">
       <div className="text-center space-y-8">
@@ -80,7 +111,6 @@ const Banner = () => {
       {/* Code Snippet Section */}
       <div className="mt-5 w-full max-w-2xl bg-gray-900 p-6 rounded-lg shadow-lg relative">
         {/* Header - Simulating a Code Editor Tab */}
-
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center space-x-2">
             <span className="h-3 w-3 bg-red-500 rounded-full"></span>
@@ -99,15 +129,16 @@ const Banner = () => {
             <span className="text-red-400">'Md Jakir Hossain'</span>,
             <br />
             &nbsp;&nbsp;<span className="text-yellow-300">skills</span>: [
-            <span className="text-green-400">'React'</span>,{" "}
-            <span className="text-green-400">'NextJS'</span>,{" "}
-            <span className="text-green-400">'Redux'</span>,{" "}
-            <span className="text-green-400">'Express'</span>, <br />
-            <span className="text-green-400">'NestJS'</span>,{" "}
-            <span className="text-green-400">'MySql'</span>,{" "}
-            <span className="text-green-400">'MongoDB'</span>,{" "}
-            <span className="text-green-400">'Docker'</span>,{" "}
-            <span className="text-green-400">'AWS'</span>],
+            {displayedSkills.length > 0 ? (
+              displayedSkills.map((skill, idx) => (
+                <span key={idx} className="text-green-400">
+                  '{skill}'{idx !== displayedSkills.length - 1 ? "," : ""}
+                </span>
+              ))
+            ) : (
+              <span className="text-gray-500">Loading skills...</span>
+            )}
+            ],
             <br />
             &nbsp;&nbsp;<span className="text-yellow-300">
               hardWorker
@@ -152,5 +183,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
-// text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-pink-500">
