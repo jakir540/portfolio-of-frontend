@@ -1,30 +1,49 @@
+/* eslint-disable padding-line-between-statements */
 "use client";
 import { useEffect, useState } from "react";
 
-const ProjectDetails = ({ params }: { params: { projectId: string } }) => {
+type ProjectDetailsProps = {
+  params: Promise<{ projectId: string }>;
+};
+
+const ProjectDetails = ({ params }: ProjectDetailsProps) => {
   const [project, setProject] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
-  const { projectId } = params;
+  const [projectId, setProjectId] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchProjectDetails = async () => {
+    // Resolving the params promise
+    const resolveParams = async () => {
       try {
-        const res = await fetch(
-          `https://portfolio-of-backend.vercel.app/api/project/${projectId}`
-        );
-        if (!res.ok) throw new Error("Failed to fetch project details");
-        const { data } = await res.json();
-        setProject(data);
-      } catch (err: any) {
-        setError(err.message || "Failed to load project details");
-      } finally {
+        const resolvedParams = await params;
+        setProjectId(resolvedParams.projectId); // Set projectId
+      } catch (err) {
+        setError("Failed to resolve params");
         setLoading(false);
       }
     };
 
+    resolveParams();
+  }, [params]);
+
+  useEffect(() => {
     if (projectId) {
+      const fetchProjectDetails = async () => {
+        try {
+          const res = await fetch(
+            `https://portfolio-of-backend.vercel.app/api/project/${projectId}`
+          );
+          if (!res.ok) throw new Error("Failed to fetch project details");
+          const { data } = await res.json();
+          setProject(data);
+        } catch (err: any) {
+          setError(err.message || "Failed to load project details");
+        } finally {
+          setLoading(false);
+        }
+      };
+
       fetchProjectDetails();
     }
   }, [projectId]);

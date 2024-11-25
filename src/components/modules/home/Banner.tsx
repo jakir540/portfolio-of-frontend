@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-sort-props */
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable padding-line-between-statements */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import React from "react";
@@ -9,7 +12,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Typical from "react-typical";
+import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
   const fullName = "Md Jakir Hossain";
@@ -26,12 +29,14 @@ const Banner = () => {
   ];
 
   const handleScrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    if (typeof document !== "undefined") {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     }
   };
 
@@ -48,36 +53,11 @@ const Banner = () => {
           Hello, <br />
           I'm{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 animate-text">
-            <Typical
-              steps={[
-                "M",
-                100,
-                "Md ",
-                100,
-                "Md J",
-                100,
-                "Md Ja",
-                100,
-                "Md Jak",
-                100,
-                "Md Jaki",
-                100,
-                "Md Jakir",
-                100,
-                "Md Jakir H",
-                100,
-                "Md Jakir Ho",
-                100,
-                "Md Jakir Hos",
-                100,
-                "Md Jakir Hoss",
-                100,
-                "Md Jakir Hossai",
-                100,
-                "Md Jakir Hossain",
-              ]}
-              wrapper="span"
-              loop={1}
+            <Typewriter
+              words={[fullName]}
+              loop={false}
+              typeSpeed={100}
+              deleteSpeed={50}
             />
           </span>
           <br />
@@ -117,8 +97,7 @@ const Banner = () => {
         {/* Buttons */}
         <div className="flex justify-center lg:justify-start gap-6 mt-10">
           <button
-            onClick={() => handleScrollToSection("#contact")}
-            id="contact"
+            onClick={() => handleScrollToSection("contact")}
             className="py-3 px-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold text-lg shadow-lg hover:shadow-pink-600/50 transform hover:scale-105 transition duration-300"
           >
             Contact Me
@@ -150,7 +129,7 @@ const Banner = () => {
             <span className="text-green-400">const</span> coder = {"{"}
             <br />
             &nbsp;&nbsp;<span className="text-yellow-300">name</span>:{" "}
-            <span className="text-red-400 text-2xl">'{fullName}'</span>,
+            <span className="text-red-400">'{fullName}'</span>,
             <br />
             &nbsp;&nbsp;<span className="text-yellow-300">skills</span>: [
             {skillsArray.map((skill, idx) => (

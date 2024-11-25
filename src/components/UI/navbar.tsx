@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-sort-props */
 /* eslint-disable padding-line-between-statements */
 /* eslint-disable import/order */
 "use client";

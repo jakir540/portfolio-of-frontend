@@ -1,15 +1,20 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-console */
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const BlogDetails = ({ params }: { params: { blogId: string } }) => {
+const BlogDetails = async ({
+  params,
+}: {
+  params: Promise<{ blogId: string }>;
+}) => {
   const [blog, setBlog] = useState<any>(null); // State for storing the blog data
   const [loading, setLoading] = useState(true); // State for loading
   const [error, setError] = useState<string | null>(null); // Error state
 
   const router = useRouter(); // Next.js router for navigation
-  const { blogId } = params;
+  const { blogId } = await params;
 
   useEffect(() => {
     const fetchBlogDetails = async () => {
