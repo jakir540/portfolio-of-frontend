@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/jsx-sort-props */
 /* eslint-disable padding-line-between-statements */
 /* eslint-disable import/order */
@@ -13,23 +15,24 @@ import {
 } from "@nextui-org/navbar";
 import NextLink from "next/link";
 import clsx from "clsx";
-import Link from "next/link";
-import { ThemeSwitch } from "@/src/components/UI/theme-switch";
+// import Link from "next/link";
+// import { ThemeSwitch } from "@/src/components/UI/theme-switch";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { ThemeSwitch } from "./theme-switch";
 
 export const Navbar = () => {
   const { theme } = useTheme();
   const isDarkMode = theme === "dark";
 
   const handleScrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    // const section = document.getElementById(sectionId);
+    // if (section) {
+    //   section.scrollIntoView({
+    //     behavior: "smooth",
+    //     block: "start",
+    //   });
+    // }
   };
 
   return (

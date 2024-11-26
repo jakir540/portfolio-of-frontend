@@ -78,7 +78,7 @@ const Footer = () => {
         </ul>
 
         {/* Divider Line */}
-        <div className="w-full max-w-xs border-t border-gray-700 my-6"></div>
+        <div className="w-full max-w-xs border-t border-gray-700 my-6"> </div>
 
         {/* Copyright Section */}
         <p className="text-gray-500 text-sm">

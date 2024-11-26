@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 /* eslint-disable react/jsx-sort-props */
@@ -36,7 +38,7 @@ const ContactMe = () => {
   return (
     <section
       id="contact"
-      className="bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] text-white py-20 px-4 sm:px-6 lg:px-8"
+      className="bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] text-white py-8 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-extrabold text-white sm:text-5xl">

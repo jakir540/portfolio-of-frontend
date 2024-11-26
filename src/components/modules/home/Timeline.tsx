@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-sort-props */
 /* eslint-disable react/self-closing-comp */
 const milestones = [
   {

@@ -2,7 +2,7 @@
 
 // import TimeLine from "@/src/components/modules/home/Timeline";
 import Education from "@/src/components/modules/home/Education";
-import Banner from "../../components/modules/home/Banner";
+import Banner from "@/src/components/modules/home/Banner";
 import AboutMe from "@/src/components/modules/home/AboutMe";
 import Footer from "@/src/components/UI/Footer";
 import ContactUs from "@/src/components/modules/home/ContactMe";

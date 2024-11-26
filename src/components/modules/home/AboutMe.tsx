@@ -1,3 +1,6 @@
+/* eslint-disable import/order */
+/* eslint-disable react/jsx-sort-props */
+/* eslint-disable react/self-closing-comp */
 /* eslint-disable react/no-unescaped-entities */
 /* AboutMe.js */
 

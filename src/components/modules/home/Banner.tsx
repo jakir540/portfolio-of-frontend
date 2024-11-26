@@ -28,18 +28,6 @@ const Banner = () => {
     "AWS",
   ];
 
-  const handleScrollToSection = (sectionId: string) => {
-    if (typeof document !== "undefined") {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col lg:flex-row justify-center items-center bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white px-6 lg:px-12 relative">
       {/* Background Glow */}
@@ -96,10 +84,7 @@ const Banner = () => {
 
         {/* Buttons */}
         <div className="flex justify-center lg:justify-start gap-6 mt-10">
-          <button
-            onClick={() => handleScrollToSection("contact")}
-            className="py-3 px-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold text-lg shadow-lg hover:shadow-pink-600/50 transform hover:scale-105 transition duration-300"
-          >
+          <button className="py-3 px-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold text-lg shadow-lg hover:shadow-pink-600/50 transform hover:scale-105 transition duration-300">
             Contact Me
           </button>
           <a

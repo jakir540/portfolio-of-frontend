@@ -1,31 +1,32 @@
-/* eslint-disable import/order */
-"use client";
-import { TProject } from "@/src/types";
+"use client"
+
 import { useEffect, useState } from "react";
-import { toast } from "react-toastify"; // For toast notifications (on error)
-import Link from "next/link"; // Import Link from Next.js
+import { TProject } from "@/src/types";
+import Link from "next/link";
 
 const AllProjects = () => {
-  const [projects, setProjects] = useState<TProject[]>([]); // State for storing projects
-  const [loading, setLoading] = useState(true); // State for loading
-  const [error, setError] = useState<string | null>(null); // Error state to handle any issues
+  const [projects, setProjects] = useState<TProject[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // Fetch projects data on component mount
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const res = await fetch(
-          "https://portfolio-of-backend.vercel.app/api/project/allProject"
+          "https://portfolio-of-backend.vercel.app/api/project/allProject",
+          { cache: "no-store" }
         );
-        if (!res.ok) throw new Error("Failed to fetch projects");
+
+        if (!res.ok) {
+          throw new Error("Failed to fetch projects");
+        }
+
         const { data } = await res.json();
-        setProjects(data); // Update projects state with fetched data
+        setProjects(data);
       } catch (error) {
-        console.error("Error fetching projects:", error);
-        setError("Failed to load projects");
-        toast.error("Failed to load projects"); // Display error message
+        setError("Failed to load projects. Please try again later.");
       } finally {
-        setLoading(false); // Set loading to false after fetch attempt
+        setLoading(false);
       }
     };
 
@@ -33,14 +34,7 @@ const AllProjects = () => {
   }, []);
 
   if (loading) {
-    return (
-      <section
-        id="projects"
-        className="bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] text-white py-20 px-4 sm:px-6 lg:px-8"
-      >
-        <p className="text-center text-lg text-gray-400">Loading projects...</p>
-      </section>
-    );
+    return <p>Loading...</p>;
   }
 
   if (error) {
@@ -80,9 +74,7 @@ const AllProjects = () => {
               />
 
               {/* Project Description */}
-              <p className="text-gray-400 mb-4 text-sm">
-                {project.description}
-              </p>
+              <p className="text-gray-400 mb-4 text-sm">{project.description}</p>
 
               {/* Technologies */}
               <div className="mb-4">
