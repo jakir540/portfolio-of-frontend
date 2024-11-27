@@ -15,8 +15,6 @@ import {
 } from "@nextui-org/navbar";
 import NextLink from "next/link";
 import clsx from "clsx";
-// import Link from "next/link";
-// import { ThemeSwitch } from "@/src/components/UI/theme-switch";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { ThemeSwitch } from "./theme-switch";
@@ -26,20 +24,22 @@ export const Navbar = () => {
   const isDarkMode = theme === "dark";
 
   const handleScrollToSection = (sectionId: string) => {
-    // const section = document.getElementById(sectionId);
-    // if (section) {
-    //   section.scrollIntoView({
-    //     behavior: "smooth",
-    //     block: "start",
-    //   });
-    // }
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   return (
     <NextUINavbar
       className={clsx(
-        "text-green-400 transition-all duration-300",
-        isDarkMode ? "bg-[#0d1224]" : "bg-white text-black shadow-lg"
+        "transition-all duration-300 shadow-lg",
+        isDarkMode
+          ? "bg-gradient-to-r from-[#0d1224] to-[#1c2331] text-white"
+          : "bg-gradient-to-r from-white to-gray-100 text-gray-800"
       )}
       maxWidth="xl"
       position="sticky"
@@ -47,33 +47,34 @@ export const Navbar = () => {
       {/* Left: Logo and Brand */}
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
+          <NextLink className="flex justify-start items-center gap-3" href="/">
             <Image
               src="/assets/MyLogo.jpg"
               alt="Logo"
-              width={50}
-              height={50}
-              className="rounded-full transition-transform duration-300 hover:scale-110"
+              width={45}
+              height={45}
+              className="rounded-full border-2 border-teal-400 transition-transform duration-300 hover:scale-110 shadow-lg"
             />
           </NextLink>
         </NavbarBrand>
 
         {/* Navbar links for larger screens */}
-        <ul className="hidden lg:flex gap-8 justify-start ml-2">
+        <ul className="hidden lg:flex gap-8 ml-4">
           {[
             { label: "Home", href: "#home" },
             { label: "About", href: "#about" },
             { label: "Projects", href: "#projects" },
             { label: "Contact", href: "#contact" },
-            { label: "Blog", href: "#Blog" },
+            { label: "Blog", href: "#blog" },
           ].map((item) => (
             <NavbarItem key={item.href}>
               <button
                 onClick={() => handleScrollToSection(item.href.slice(1))}
                 className={clsx(
-                  "text-lg font-medium transition-colors duration-200",
-                  isDarkMode ? "text-white" : "text-black",
-                  "hover:text-primary"
+                  "text-lg font-medium transition-all duration-200 px-2",
+                  isDarkMode
+                    ? "text-gray-200 hover:text-teal-400"
+                    : "text-gray-800 hover:text-blue-600"
                 )}
               >
                 {item.label}
@@ -88,9 +89,14 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="flex gap-2 items-center">
+        <NavbarItem className="flex gap-3 items-center">
           <ThemeSwitch />
-          {/* Additional icons or elements can be added here */}
+          <button
+            className="rounded-full w-10 h-10 bg-teal-400 hover:bg-teal-500 transition-all duration-300 flex items-center justify-center text-white shadow-lg"
+            title="Profile"
+          >
+            <i className="fas fa-user text-xl"></i>
+          </button>
         </NavbarItem>
       </NavbarContent>
 
@@ -102,26 +108,29 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       <NavbarMenu
-        className={isDarkMode ? "bg-[#0d1224]" : "bg-white text-black"}
+        className={clsx(
+          "py-4 px-6 text-center rounded-lg shadow-xl",
+          isDarkMode ? "bg-[#0d1224] text-white" : "bg-white text-gray-800"
+        )}
       >
-        <div className="mx-4 mt-2 flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           {[
             { label: "Home", href: "#home" },
             { label: "About", href: "#about" },
             { label: "Projects", href: "#projects" },
             { label: "Login", href: "#login" },
-            { label: "SignUp", href: "#signUp" },
-            { label: "Projects", href: "#projects" },
+            { label: "SignUp", href: "#signup" },
             { label: "Contact", href: "#contact" },
-            { label: "Blog", href: "#Blog" },
+            { label: "Blog", href: "#blog" },
           ].map((item, index) => (
             <NavbarMenuItem key={`${item.label}-${index}`}>
               <button
                 onClick={() => handleScrollToSection(item.href.slice(1))}
                 className={clsx(
-                  "text-lg font-medium transition-colors duration-200",
-                  isDarkMode ? "text-white" : "text-black",
-                  "hover:text-primary"
+                  "text-lg font-medium transition-all duration-200 py-2",
+                  isDarkMode
+                    ? "text-gray-200 hover:text-teal-400"
+                    : "text-gray-800 hover:text-blue-600"
                 )}
               >
                 {item.label}
