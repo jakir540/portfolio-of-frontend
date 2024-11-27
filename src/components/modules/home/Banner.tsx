@@ -37,22 +37,24 @@ const Banner = () => {
 
       {/* Name Section */}
       <div className="relative z-10 flex-1 text-center lg:text-left space-y-8 lg:space-y-12 p-4">
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-          Hello, <br />
-          I'm{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 animate-text">
-            <Typewriter
-              words={[fullName]}
-              loop={false}
-              typeSpeed={100}
-              deleteSpeed={50}
-            />
-          </span>
-          <br />
-          <span className="block mt-2 text-green-400 text-xl md:text-2xl">
-            Professional Web Developer
-          </span>
-        </h1>
+        <div className="h-48">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+            Hello, <br />
+            I'm{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 animate-text">
+              <Typewriter
+                words={[fullName]}
+                loop={false}
+                typeSpeed={100}
+                deleteSpeed={50}
+              />
+            </span>
+            <br />
+            <span className="block mt-2 text-green-400 text-xl md:text-2xl">
+              Professional Web Developer
+            </span>
+          </h1>
+        </div>
 
         {/* Social Icons */}
         <div className="flex justify-center lg:justify-start gap-6 mt-6">
@@ -113,10 +115,14 @@ const Banner = () => {
           <code>
             <span className="text-green-400">const</span> coder = {"{"}
             <br />
-            &nbsp;&nbsp;<span className="text-yellow-300">name</span>:{" "}
-            <span className="text-red-400">'{fullName}'</span>,
+            &nbsp;&nbsp;<span className="text-yellow-300">
+              name
+            </span>: <span className="text-red-400 text-xl">'{fullName}'</span>
+            ,
             <br />
-            &nbsp;&nbsp;<span className="text-yellow-300">skills</span>: [
+            &nbsp;&nbsp;<span className="text-yellow-300">
+              skills
+            </span>: [
             {skillsArray.map((skill, idx) => (
               <span key={idx} className="text-green-400">
                 '{skill}'{idx !== skillsArray.length - 1 ? "," : ""}
@@ -136,20 +142,29 @@ const Banner = () => {
               problemSolver
             </span>: <span className="text-blue-400">true</span>,
             <br />
-            &nbsp;&nbsp;<span className="text-yellow-300">hireable</span>:{" "}
-            <span className="text-green-400">function</span>() {"{"}
+            &nbsp;&nbsp;<span className="text-yellow-300">
+              hireable
+            </span>: <span className="text-green-400">function</span>() {"{"}
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <span className="text-green-400">return</span>(
+            <span className="text-green-400">
+              return
+            </span>(
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.
-            <span className="text-yellow-300">hardWorker</span> &&
+            <span className="text-yellow-300">
+              hardWorker
+            </span> &&
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.
-            <span className="text-yellow-300">problemSolver</span> &&
+            <span className="text-yellow-300">
+              problemSolver
+            </span> &&
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.
-            <span className="text-yellow-300">skills</span>.length &gt;= 5
+            <span className="text-yellow-300">
+              skills
+            </span>.length &gt;= 5
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;)
             <br />

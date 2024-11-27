@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-sort-props */
 import Link from "next/link";
 import {
   FaTwitterSquare,
@@ -10,80 +9,67 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-10">
-      <div className="flex flex-col items-center">
+    <footer className="bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white py-14 shadow-lg">
+      <div className="container mx-auto flex flex-col items-center px-6">
         {/* Title */}
-        <h3 className="text-4xl font-bold text-gray-200 mt-8">
+        <h3 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600">
           MERN Stack Developer
         </h3>
 
         {/* Developer Info */}
-        <p className="mt-4 max-w-lg text-center text-gray-400 leading-relaxed">
-          I’m Md Jakir Hossain, a MERN Stack Developer skilled in JavaScript,
-          React, and Node.js. Passionate about building responsive and
-          user-friendly web applications with a focus on seamless UI/UX design,
-          secure backend, and scalable architectures.
+        <p className="mt-6 max-w-2xl text-center text-gray-400 leading-relaxed text-lg">
+          I’m Md Jakir Hossain, a passionate MERN Stack Developer skilled in
+          JavaScript, Typescript, React, Nextjs and Node.js. I specialize in
+          creating responsive web applications with seamless UI/UX design,
+          secure backend systems, and scalable architectures.
         </p>
 
         {/* Social Media Icons */}
-        <ul className="flex space-x-8 mt-6">
-          <li>
-            <Link
-              href="https://www.facebook.com/md.jakirhasan.9279"
-              target="_blank"
-              className="text-gray-300 hover:text-blue-600 transition duration-200"
-              rel="noopener noreferrer"
-            >
-              <FaFacebook size={28} />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="https://github.com/jakir540"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-gray-400 transition duration-200"
-            >
-              <FaGithubSquare size={28} />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-gray-300 hover:text-red-600 transition duration-200"
-            >
-              <FaGoogle size={28} />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="https://www.linkedin.com/in/md-jakir-hossain-1398741b2/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-blue-500 transition duration-200"
-            >
-              <FaLinkedinIn size={28} />
-            </Link>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/MdJakir7400"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-blue-400 transition duration-200"
-            >
-              <FaTwitterSquare size={28} />
-            </a>
-          </li>
-        </ul>
 
-        {/* Divider Line */}
-        <div className="w-full max-w-xs border-t border-gray-700 my-6"> </div>
+        <div className="flex justify-center lg:justify-start gap-6 mt-6">
+          {/* GitHub */}
+          <a
+            href="https://github.com"
+            className="w-14 h-14 flex justify-center items-center rounded-full bg-gray-900 shadow-lg text-gray-400 hover:text-blue-500 hover:shadow-blue-500/50 transform hover:scale-110 hover:-rotate-3 transition-all duration-300"
+          >
+            <FaGithubSquare size={28} />
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://linkedin.com"
+            className="w-14 h-14 flex justify-center items-center rounded-full bg-gray-900  shadow-lg text-gray-400 hover:text-blue-500 hover:shadow-blue-500/50 transform hover:scale-110 hover:-rotate-3 transition-all duration-300"
+          >
+            <FaLinkedinIn size={28} />
+          </a>
+
+          {/* Facebook */}
+          <a
+            href="https://facebook.com"
+            className="w-14 h-14 flex justify-center items-center rounded-full bg-gray-900 shadow-lg text-gray-400 hover:text-blue-500 hover:shadow-blue-500/50 transform hover:scale-110 hover:-rotate-3 transition-all duration-300"
+          >
+            <FaFacebook size={28} />
+          </a>
+
+          {/* Twitter */}
+          <a
+            href="https://twitter.com"
+            className="w-14 h-14 flex justify-center items-center rounded-full bg-gray-900 shadow-lg text-gray-400 hover:text-blue-500 hover:shadow-blue-500/50 transform hover:scale-110 hover:-rotate-3 transition-all duration-300"
+          >
+            <FaTwitterSquare size={28} />
+          </a>
+        </div>
+
+        {/* Animated Divider */}
+        <div className="w-full max-w-xs mt-8">
+          <div className="h-1 bg-gradient-to-r from-teal-400 via-cyan-500 to-indigo-600 rounded-full animate-pulse"></div>
+        </div>
 
         {/* Copyright Section */}
-        <p className="text-gray-500 text-sm">
-          &copy; {new Date().getFullYear()} Md Jakir Hossain. All rights
-          reserved.
+        <p className="text-gray-500 text-sm mt-6 tracking-wide">
+          &copy; {new Date().getFullYear()}{" "}
+          <span className="font-medium text-white">Md Jakir Hossain</span>. All
+          rights reserved.
         </p>
       </div>
     </footer>
