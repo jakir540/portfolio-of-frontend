@@ -91,12 +91,12 @@ export const Navbar = () => {
       >
         <NavbarItem className="flex gap-3 items-center">
           <ThemeSwitch />
-          <button
+          {/* <button
             className="rounded-full w-10 h-10 bg-teal-400 hover:bg-teal-500 transition-all duration-300 flex items-center justify-center text-white shadow-lg"
             title="Profile"
           >
             <i className="fas fa-user text-xl"></i>
-          </button>
+          </button> */}
         </NavbarItem>
       </NavbarContent>
 

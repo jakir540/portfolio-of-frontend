@@ -62,3 +62,9 @@ export type TProject = {
   features: string[];
   role: string;
 };
+
+export type PageProps = {
+  params: {
+    blogId: string;
+  };
+};
