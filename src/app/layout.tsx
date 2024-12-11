@@ -1,7 +1,7 @@
 /* eslint-disable import/order */
 /* eslint-disable prettier/prettier */
 import "@/src/styles/globals.css";
-import { Metadata, Viewport } from "next";
+import { Metadata } from "next"; // Only import Metadata if it exists and is needed
 import clsx from "clsx";
 
 import { Providers } from "./providers";
@@ -20,7 +20,8 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
+// Define the viewport configuration directly if it's a custom structure
+export const viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },

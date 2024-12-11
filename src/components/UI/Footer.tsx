@@ -18,7 +18,7 @@ const Footer = () => {
 
         {/* Developer Info */}
         <p className="mt-6 max-w-2xl text-center text-gray-400 leading-relaxed text-lg">
-          I’m Md Jakir Hossain, a passionate MERN Stack Developer skilled in
+          I’m Md Jakir Hossain, a passionate Web Developer skilled in
           JavaScript, Typescript, React, Nextjs and Node.js. I specialize in
           creating responsive web applications with seamless UI/UX design,
           secure backend systems, and scalable architectures.

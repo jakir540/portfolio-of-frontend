@@ -19,7 +19,7 @@ export type Comment = {
   replies?: Comment[]; // Nested replies to the comment
 };
 
-export type BlogPost = {
+export type TBlogPost = {
   _id: string; // Unique identifier for the blog post
   title: string; // Title of the blog post
   slug: string; // URL-friendly version of the title

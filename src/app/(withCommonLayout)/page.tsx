@@ -1,5 +1,3 @@
-/* eslint-disable import/order */
-
 // import TimeLine from "@/src/components/modules/home/Timeline";
 import Education from "@/src/components/modules/home/Education";
 import Banner from "@/src/components/modules/home/Banner";
@@ -10,8 +8,15 @@ import Skills from "@/src/components/modules/home/Skills";
 import AllProjects from "@/src/components/modules/home/AllProjects";
 import Blogs from "@/src/components/modules/home/Blogs";
 import TimeLine from "@/src/components/modules/home/Timeline";
+import {
+  FetchAllBlogs,
+  FetchAllProjects,
+} from "@/src/services/projectServices";
 
-export default function Home() {
+const Home = async () => {
+  const projects = await FetchAllProjects();
+  const blogs = await FetchAllBlogs();
+
   return (
     <>
       <Banner />
@@ -19,10 +24,12 @@ export default function Home() {
       <Education />
       <TimeLine />
       <Skills />
-      <AllProjects />
-      <Blogs />
+      <AllProjects projects={projects} />
+      <Blogs blogs={blogs} />
       <ContactUs />
       <Footer />
     </>
   );
-}
+};
+
+export default Home;
