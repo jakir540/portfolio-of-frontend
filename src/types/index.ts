@@ -21,6 +21,7 @@ export type Comment = {
 
 export type TBlogPost = {
   _id: string; // Unique identifier for the blog post
+  id: string;
   title: string; // Title of the blog post
   slug: string; // URL-friendly version of the title
   excerpt: string; // Short summary or preview of the content

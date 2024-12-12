@@ -1,14 +1,10 @@
+import { FetchAllBlogs } from "@/src/services/projectServices";
 import { TBlogPost } from "@/src/types";
 import Link from "next/link";
-interface BlogsProps {
-  blogs: {
-    data: TBlogPost[];
-  };
-}
 
-const Blogs: React.FC<BlogsProps> = ({ blogs }) => {
-  const blogList = blogs?.data || []; // Handle undefined or null cases
-
+const Blogs = async () => {
+  const blogs = await FetchAllBlogs();
+  const blogList = blogs?.data || [];
   return (
     <div className="bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] text-white py-16 px-4 sm:px-6 lg:px-8">
       <h1 className="text-5xl font-semibold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
@@ -49,4 +45,5 @@ const Blogs: React.FC<BlogsProps> = ({ blogs }) => {
     </div>
   );
 };
+
 export default Blogs;

@@ -1,14 +1,16 @@
 // app/(withCommonLayout)/project/[projectId]/ProjectDetails.tsx
 
 const ProjectDetails = ({ project }: { project: any }) => {
+  const singleProject = project?.data || [];
+  console.log({ singleProject });
   return (
     <section className="bg-gradient-to-b from-[#0f0f0f] via-gray-900 to-[#0f0f0f] text-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto rounded-lg shadow-lg overflow-hidden relative">
         {/* Project Image with Glassmorphism */}
         <div className="relative">
           <img
-            src={project.image}
-            alt={`${project.title} screenshot`}
+            src={singleProject.image}
+            alt={`${singleProject.title} screenshot`}
             className="w-full h-[500px] object-cover rounded-t-lg"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black" />
@@ -17,7 +19,7 @@ const ProjectDetails = ({ project }: { project: any }) => {
         {/* Glassmorphic Info Section */}
         <div className="absolute top-6 left-6 bg-white/10 backdrop-blur-md rounded-lg p-4 shadow-lg max-w-[70%] sm:max-w-[40%]">
           <h1 className="text-3xl sm:text-4xl font-bold text-teal-400">
-            {project.title}
+            {singleProject.title}
           </h1>
         </div>
 
@@ -29,7 +31,7 @@ const ProjectDetails = ({ project }: { project: any }) => {
               Project Description
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed">
-              {project.description}
+              {singleProject.description}
             </p>
           </div>
 
@@ -39,21 +41,23 @@ const ProjectDetails = ({ project }: { project: any }) => {
               Technologies
             </h2>
             <div className="flex flex-wrap gap-4 mt-4">
-              {project.technologies.map((tech: string, index: number) => (
-                <span
-                  key={index}
-                  className="bg-teal-500/20 text-teal-300 px-4 py-2 rounded-full text-sm shadow-md hover:shadow-teal-500/50 transition-all duration-300"
-                >
-                  {tech}
-                </span>
-              ))}
+              {singleProject?.technologies.map(
+                (tech: string, index: number) => (
+                  <span
+                    key={index}
+                    className="bg-teal-500/20 text-teal-300 px-4 py-2 rounded-full text-sm shadow-md hover:shadow-teal-500/50 transition-all duration-300"
+                  >
+                    {tech}
+                  </span>
+                )
+              )}
             </div>
           </div>
 
           {/* Buttons */}
           <div className="flex justify-center gap-6 mt-10">
             <a
-              href={project.liveLink}
+              href={singleProject.liveLink}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-gradient-to-r from-teal-500 to-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-teal-500/50 transform hover:scale-105 transition-all duration-300"
@@ -61,7 +65,7 @@ const ProjectDetails = ({ project }: { project: any }) => {
               🚀 <span>Live Project</span>
             </a>
             <a
-              href={project.repositoryLink}
+              href={singleProject.repositoryLink}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-gray-800 text-teal-400 px-6 py-3 rounded-lg shadow-md hover:bg-gray-700 transform hover:scale-105 transition-all duration-300"

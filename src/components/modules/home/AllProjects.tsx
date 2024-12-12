@@ -2,7 +2,15 @@
 import { TProject } from "@/src/types";
 import Link from "next/link";
 
-const AllProjects = async ({ projects }: { projects: TProject[] }) => {
+interface IProjectProps {
+  projects: {
+    data: TProject[];
+  };
+}
+
+const AllProjects: React.FC<IProjectProps> = async ({ projects }) => {
+  const projectsLists = projects?.data || [];
+
   return (
     <section
       id="projects"
@@ -15,7 +23,7 @@ const AllProjects = async ({ projects }: { projects: TProject[] }) => {
 
       {/* Grid of Projects */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {projects.data.map((project: TProject) => (
+        {projectsLists?.map((project: TProject) => (
           <Link key={project._id} href={`/project/${project._id}`} passHref>
             <div className="bg-gray-900 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all cursor-pointer group">
               <div className="relative h-56 overflow-hidden rounded-t-lg">

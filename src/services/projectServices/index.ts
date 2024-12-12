@@ -26,6 +26,32 @@ export const FetchAllBlogs = async () => {
     return { data: [] }; // Fallback for no blogs
   }
 };
+export const FetchSingleBlog = async (blogId: string) => {
+  const res = await fetch(
+    `https://portfolio-of-backend.vercel.app/api/blog/${blogId}`
+  );
+  const json = await res.json();
+
+  // Adjust this based on API response structure
+  if (json?.data) {
+    return json;
+  } else {
+    return { data: [] }; // Fallback for no blogs
+  }
+};
+export const FetchSingleProject = async (projectId: string) => {
+  const res = await fetch(
+    `https://portfolio-of-backend.vercel.app/api/project/${projectId}`
+  );
+  const json = await res.json();
+
+  // Adjust this based on API response structure
+  if (json?.data) {
+    return json;
+  } else {
+    return { data: [] }; // Fallback for no blogs
+  }
+};
 
 // ("use server");
 
