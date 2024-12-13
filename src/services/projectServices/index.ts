@@ -5,13 +5,20 @@ export const FetchAllProjects = async () => {
 
   return res.json();
 };
-// export const FetchAllBlogs = async () => {
-//   const res = await fetch(
-//     "https://portfolio-of-backend.vercel.app/api/blog/AllBlog"
-//   );
 
-//   return res.json();
-// };
+export const FetchSingleProject = async (projectId: string) => {
+  const res = await fetch(
+    `https://portfolio-of-backend.vercel.app/api/project/${projectId}`
+  );
+  const json = await res.json();
+
+  // Adjust this based on API response structure
+  if (json?.data) {
+    return json;
+  } else {
+    return { data: [] }; // Fallback for no blogs
+  }
+};
 
 export const FetchAllBlogs = async () => {
   const res = await fetch(
@@ -29,19 +36,6 @@ export const FetchAllBlogs = async () => {
 export const FetchSingleBlog = async (blogId: string) => {
   const res = await fetch(
     `https://portfolio-of-backend.vercel.app/api/blog/${blogId}`
-  );
-  const json = await res.json();
-
-  // Adjust this based on API response structure
-  if (json?.data) {
-    return json;
-  } else {
-    return { data: [] }; // Fallback for no blogs
-  }
-};
-export const FetchSingleProject = async (projectId: string) => {
-  const res = await fetch(
-    `https://portfolio-of-backend.vercel.app/api/project/${projectId}`
   );
   const json = await res.json();
 

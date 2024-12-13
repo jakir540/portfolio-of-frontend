@@ -1,4 +1,6 @@
-// app/components/AllProjects.js (or wherever it's located)
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { TProject } from "@/src/types";
 import Link from "next/link";
 
@@ -8,20 +10,27 @@ interface IProjectProps {
   };
 }
 
-const AllProjects: React.FC<IProjectProps> = async ({ projects }) => {
-  const projectsLists = projects?.data || [];
+const AllProjects: React.FC<IProjectProps> = ({ projects }) => {
+  const [projectsLists, setProjectsLists] = useState<TProject[]>([]);
+
+  useEffect(() => {
+    // Simulating async data processing or using the passed prop
+    const fetchProjects = async () => {
+      const data = projects?.data || [];
+      setProjectsLists(data);
+    };
+
+    fetchProjects();
+  }, [projects]);
 
   return (
     <section
       id="projects"
       className="bg-gradient-to-b from-[#0d1224] via-gray-800 to-[#0d1224] text-white py-20 px-4 sm:px-6 lg:px-8"
     >
-      {/* Section Title */}
       <h1 className="text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
         All Projects
       </h1>
-
-      {/* Grid of Projects */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {projectsLists?.map((project: TProject) => (
           <Link key={project._id} href={`/project/${project._id}`} passHref>
