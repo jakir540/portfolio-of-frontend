@@ -25,6 +25,7 @@ const milestones = [
     endDate: "2024-10-31",
     description:
       "Dive into advanced web development, including TypeScript, Redux, and Mongoose. Built advanced-level websites and explored modern design trends.",
+    image: "https://i.ibb.co.com/dG6PvrH/cert.jpg",
   },
   {
     title: "Contributed to Open-Source Projects",
@@ -95,6 +96,17 @@ const TimeLine = () => {
                 </div>
               </div>
               <p className="text-gray-300 text-base">{item.description}</p>
+
+              {/* Hover image */}
+              {item.image && (
+                <div className="absolute inset-0 bg-black bg-opacity-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+              )}
 
               <div className="absolute top-1/2 left-[-8px] transform -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full shadow-lg border-2 border-gray-900"></div>
             </div>
